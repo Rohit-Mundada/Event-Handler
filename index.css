@@ -1,0 +1,105 @@
+body, html {
+    background-color: #cfe0bb;
+}
+
+.navbar-brand {
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+#email {
+    border-radius: 0px;
+    border: 2px;
+    padding: 20px; 
+    width: 250px;
+    height: 40px; 
+}
+
+#Name {
+    border-radius: 0px;
+    border: 2px;
+    padding: 20px; 
+    width: 250px;
+    height: 40px; 
+}
+
+#event-Desc {
+    border-radius: 0px;
+    border: 2px;
+    padding: 20px; 
+    width: 400px;
+    height: 250px; 
+}
+
+#pwd {
+    border-radius: 0px;
+    border: 2px;
+    padding: 20px; 
+    width: 250px;
+    height: 40px; 
+}
+
+.card {
+    margin: 10px;
+    padding: 0px;
+    border-radius: 25px;
+    float: center;
+}
+
+.card:hover {
+    box-shadow: 10px 10px 5px grey;
+}
+
+.btn-margin-left {
+    margin-left: 2px;
+}
+.btn-margin-right {
+    margin-right: 2px;
+}
+
+.card-img-top {
+    border-radius: 25px;
+}
+
+.fab {
+    width: 40px;
+    height: 40px;
+    background-color: #0397f4;
+    border-radius: 50%;
+    transition: all 0.1s ease-in-out;
+    
+    font-size: 24px;
+    color: white;
+    text-align: center;
+ }
+  
+ .fab:hover {
+    box-shadow: 0 6px 14px 0 #666;
+    transform: scale(1.09);
+    cursor: pointer;
+ }
+
+ #edit-Name {
+    border-radius: 0px;
+    border: 2px;
+    padding: 20px; 
+    width: 250px;
+    height: 40px; 
+}
+
+
+
+#edit-event-Desc {
+    border-radius: 0px;
+    border: 2px;
+    padding: 20px; 
+    width: 400px;
+    height: 250px; 
+}
+
+ 

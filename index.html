@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment</title>
+    <link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel = "stylesheet" href = "index.css">
+</head>
+<body>
+  <!---This creats a navigation bar on the top of the screen-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><img src = "logo.jpg" class = "logo">Event Handler</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://docs.google.com/document/d/1Nn7hpkSCsKKcjU_p2zs1-n3C8GbW4jsN-Y11rtV8fhk/edit">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Events
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="https://www.bitswaves.org/">Waves</a>
+        <a class="dropdown-item" href="https://bits-quark.org/">Quark</a>
+        <a class="dropdown-item" href="http://www.bits-spree.org/">Spree</a>
+        <a class="dropdown-item" href="https://www.facebook.com/zephyr.bitsgoa/">Zephyr</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    </ul>   
+ <!-- Button to Open the Modal -->
+<!-- Page-->
+<div class="fab" data-toggle = "modal" data-target = "#myModal1"> + </div>
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Add Event Details</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <p>Event name:
+        <br><input type = "text" id = "Name" placeholder = "Enter Event Details Here"/>
+        </p>
+        <p>Event Description:
+        <br><input type = "text" id = "event-Desc" placeholder = "Enter the Event Description"/>
+        </p>          
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal" id = 'fab' onclick="addCard()">Create Card</button>
+      </div>
+
+    </div>
+  </div>
+</div>              
+
+<!-- The Modal -->
+<div class="modal fade" id = "edit-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Add Event Details</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <p>Event name:
+        <br><input type = "text" id = "edit-Name" placeholder = "Enter Event Details Here"/>
+        </p>
+        <p>Event Description:
+        <br><input type = "text" id = "edit-event-Desc" placeholder = "Enter the Event Description"/>
+        </p>          
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal" id = 'fab' onclick="editCard()">Save</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+  <!-- Button to Open the Modal -->
+<button type="button" class="btn btn-primary btn-sm btn-margin-left" data-toggle="modal" data-target="#myModal">
+    Sign In
+  </button>
+  
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Hey There!</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <p>Email:
+          <br><input type = "text" id = "email" placeholder = "Enter your email here"/>
+          </p>
+          <p>Password:
+          <br><input type = "text" id = "pwd" placeholder = "Enter your password here"/>
+          </p>          
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Create Account</button>
+          <button type="button" class="btn btn-success" data-dismiss="modal">Sign In</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+</nav>
+<div class = "card-columns" id = "cards">
+  <div class="card" style="width: 18rem;" id = "card1">
+    <img class="card-img-top" src="diwali.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title" id = "head1">Diwali</h5>
+        <p class="card-text" id = "p1">Deepavali (also: Diwali) is one of India's biggest festivals. The word 'Deepawali' means rows of lighted lamps. It is a festival of lights and Hindus celebrate it with joy. During this festival, people light up their houses and shops with Diyas (Small cup-shaped oil lamp made of baked clay)</p>
+        <a href="#" class="btn btn-primary" style = "align-self: auto;" onclick = "recognise(1)" data-toggle="modal" data-target="#edit-modal">edit</a>
+        <a href="#" class="btn btn-danger" style = "align-self: auto;" onclick = "delCard('card1')">Delete</a>
+      </div>
+  </div>
+  <div class="card" style="width: 18rem;" id = "card2">
+      <img class="card-img-top" src="holi.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" id = "head2">Holi</h5>
+          <p class="card-text" id = "p2">Holi is the festival of colours. The festival is celebrated for two to three days. Holi is celebrated in the spring season because it is welcoming spring.</p>
+          <a href="#" class="btn btn-primary" style = "align-self: auto;" onclick = "recognise(2)" data-toggle="modal" data-target="#edit-modal">edit</a>
+          <a href="#" class="btn btn-danger" style = "align-self: auto;" onclick = "delCard('card2')">Delete</a>
+        </div>
+  </div>
+  <div class="card" style="width: 18rem;" id = "card3">
+      <img class="card-img-top" src="christmas.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" id = "head3">Christmas</h5>
+          <p class="card-text" id = "p3">Christmas is a great festival which spreads joy and happiness. It is celebrated to commemorate the birth anniversary of Jesus Christ who is considered as the founder of Christianity and celebrated every year on 25th of December in the winter season.</p>
+          <a href="#" class="btn btn-primary" style = "align-self: auto;" onclick = "recognise(3)" data-toggle="modal" data-target="#edit-modal">edit</a>
+          <a href="#" class="btn btn-danger" style = "align-self: auto;" onclick = "delCard('card3')">Delete</a>
+        </div>
+  </div>  
+  <div class="card" style="width: 18rem;" id = "card4">
+      <img class="card-img-top" src="pi.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" id = "head4">Pi-Day</h5>
+          <p class="card-text" id = "p4">Pi Day is celebrated on March 14th (3/14) around the world. Pi (Greek letter “π”) is the symbol used in mathematics to represent a constant — the ratio of the circumference of a circle to its diameter — which is approximately 3.14159265358979323846264338327950.</p>
+          <a href="#" class="btn btn-primary" style = "align-self: auto;" onclick = "recognise(4)" data-toggle="modal" data-target="#edit-modal">edit</a>
+          <a href="#" class="btn btn-danger" style = "align-self: auto;" onclick = "delCard('card4')">Delete</a>
+        </div>
+  </div>    
+  <div class="card" style="width: 18rem;" id = "card5">
+      <img class="card-img-top" src="nettech.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" id = "head5">Net-Tech</h5>
+          <p class="card-text" id = "p5">Nettech will conduct a certificate course on Computer Network Management at BITS-Pilani Goa Campus from 11th to 26th October 2019</p>
+          <a href="#" class="btn btn-primary" style = "align-self: auto;" onclick = "recognise(5)" data-toggle="modal" data-target="#edit-modal">edit</a>
+          <a href="#" class="btn btn-danger" style = "align-self: auto;" onclick = "delCard('card5')">Delete</a>
+        </div>
+  </div> 
+  <div class="card" style="width: 18rem;" id = "card6">
+      <img class="card-img-top" src="sae.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" id = "head6">SAE International</h5>
+          <p class="card-text" id = "p6">SAE International, initially established as the Society of Automobile Engineers and later becoming the Society of Automotive Engineers, is a U.S.-based, globally active professional association and standards developing organization for engineering professionals in various industries.</p>
+          <a href="#" class="btn btn-primary" style = "align-self: auto;" onclick = "recognise(6)" data-toggle="modal" data-target="edit-modal">edit</a>
+          <a href="#" class="btn btn-danger" style = "align-self: auto;" onclick = "delCard('card6')">Delete</a>
+        </div>
+  </div>  
+  <script 
+  type = "text/javascript"
+  src = "https://code.jquery.com/jquery-2.2.4.min.js">
+  </script>
+  <script src = "index.js"></script>
+</body>
+</html>
